@@ -1,1 +1,121 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+
+
+  font-size: 20px;
+  line-height: 23px;
+  color: #2F4F4F;
+}
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 30px 35px;
+  box-sizing: border-box;
+
+  @media (min-width: 750px) {
+    padding: 30px 160px;
+  }
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 30px 55px;
+  }
+  @media (min-width: 1500px) {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 30px 305px;
+  }
+}
+
+.photo {
+  position: relative;
+  height: 200px;
+  width: 200px;
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  &__rank {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #8B0000;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+  }
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+  max-width: 231px;
+  padding-block: 30px;
+  padding-inline: 30px;
+  position: relative;
+  transition: transform 1s linear, 
+    background-color 1s linear, 
+    border-radius 1s linear;
+    
+
+  &:hover {
+    z-index: 1000;
+    transform: scale(1.2);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 25%; 
+  
+    &:hover .extra {
+      visibility: 1;
+      opacity: 1;
+      color: #000000;
+      font-size: 21.6px;
+      line-height: 24.8px;
+    }
+
+    .photo {
+      position: relative;
+      height: 200px;
+      width: 200px;
+    
+      &__img {
+        height: 100%;
+        width: 100%;
+        border-radius: 25%;
+      }
+    }
+  }
+}
+
+.name {
+  padding-top: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.extra {
+  visibility: 0;
+  opacity: 0;
+  font-size: 18px;
+  line-height: 20.7px;
+  padding-top: 10px;
+
+  transition: visibility 1s linear, 
+  opacity 1s linear,
+}
 
